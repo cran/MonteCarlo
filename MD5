@@ -1,13 +1,13 @@
-086e96c3be1a9562378f6daeac6c3506 *DESCRIPTION
-a1424340d92dc2e31ff9516510d1a9aa *NAMESPACE
+22c0be7b8aa2c2d6839af393d911232c *DESCRIPTION
+b6181a76d0516d3a49c36be16cfbbc62 *NAMESPACE
 efcc6c4508c4bad50f33a36e631d5f1f *R/MakeTable.R
 bc84b8ddacddc0117e41eead38248087 *R/MergeResults.R
-d9f70a8589215044ab0d6cf423229f79 *R/MonteCarlo.R
+2fe4b5d57ba18ddd2bdd53a4078bd70d *R/MonteCarlo.R
 526862a7ef148c0254429d3256bc04e2 *README.md
 03ad3eafa9098d0ad4ce1bf5fcea79b0 *build/vignette.rds
 a50ba719688629bb7251ed823e5e12b3 *inst/doc/MonteCarlo-Vignette.R
 0aa24a5bd7b79f97e5f1108ef368ef30 *inst/doc/MonteCarlo-Vignette.Rmd
-25dfa5f5ec0908851d88a97cedc9ddde *inst/doc/MonteCarlo-Vignette.html
+abe393128f8e2c65a795d3b5dc562009 *inst/doc/MonteCarlo-Vignette.html
 f3feb7b9a7691b0c2ce563713c99e269 *man/MC_inner.Rd
 d92ae38ff216adf2fb9d771ebd006d71 *man/MakeTable.Rd
 1a13f68bbcdd6846a7542a6c3ea5a060 *man/MergeResults.Rd
