@@ -12,7 +12,7 @@
 
 <meta name="author" content="Christian Leschinski" />
 
-<meta name="date" content="2017-04-07" />
+<meta name="date" content="2017-04-23" />
 
 <title>Vignette: The MonteCarlo Package</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Vignette: The MonteCarlo Package</h1>
 <h4 class="author"><em>Christian Leschinski</em></h4>
-<h4 class="date"><em>2017-04-07</em></h4>
+<h4 class="date"><em>2017-04-23</em></h4>
 
 
 
@@ -152,7 +152,7 @@ ttest&lt;-function(n,loc,scale){
 ##     return(list(&quot;decision&quot;=decision))
 ## }
 ## 
-## Required time: 14.83 secs for nrep = 1000  repetitions on 1 CPUs 
+## Required time: 18.12 secs for nrep = 1000  repetitions on 1 CPUs 
 ## 
 ## Parameter grid: 
 ## 
@@ -176,10 +176,10 @@ ttest&lt;-function(n,loc,scale){
 ##  scale &amp;&amp; \multicolumn{ 6 }{c}{ 1 } &amp;  &amp; \multicolumn{ 6 }{c}{ 2 } \\ 
 ## n/loc &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; 0.06 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.11 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.95 \\ 
-## 100 &amp;  &amp; 0.05 &amp; 0.51 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.16 &amp; 0.54 &amp; 0.84 &amp; 0.97 &amp; 1.00 \\ 
-## 250 &amp;  &amp; 0.06 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.04 &amp; 0.34 &amp; 0.91 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-## 500 &amp;  &amp; 0.06 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.04 &amp; 0.58 &amp; 0.99 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## 50 &amp;  &amp; 0.05 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.10 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.94 \\ 
+## 100 &amp;  &amp; 0.05 &amp; 0.51 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.07 &amp; 0.16 &amp; 0.53 &amp; 0.84 &amp; 0.98 &amp; 1.00 \\ 
+## 250 &amp;  &amp; 0.05 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.35 &amp; 0.90 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## 500 &amp;  &amp; 0.05 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.06 &amp; 0.58 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -198,15 +198,15 @@ ttest&lt;-function(n,loc,scale){
 ## \hline\hline\\\\
 ## scale &amp; n/loc &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 4 }{*}{ 1 } &amp; 50 &amp;  &amp; 0.06 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 \\ 
+## \multirow{ 4 }{*}{ 1 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 \\ 
 ##  &amp; 100 &amp;  &amp; 0.05 &amp; 0.51 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 500 &amp;  &amp; 0.06 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 500 &amp;  &amp; 0.05 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 4 }{*}{ 2 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.11 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.95 \\ 
-##  &amp; 100 &amp;  &amp; 0.05 &amp; 0.16 &amp; 0.54 &amp; 0.84 &amp; 0.97 &amp; 1.00 \\ 
-##  &amp; 250 &amp;  &amp; 0.04 &amp; 0.34 &amp; 0.91 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.58 &amp; 0.99 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## \multirow{ 4 }{*}{ 2 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.10 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.94 \\ 
+##  &amp; 100 &amp;  &amp; 0.07 &amp; 0.16 &amp; 0.53 &amp; 0.84 &amp; 0.98 &amp; 1.00 \\ 
+##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.35 &amp; 0.90 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 500 &amp;  &amp; 0.06 &amp; 0.58 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -473,8 +473,8 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## \hline\hline\\\\
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.03 \\ 
-## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 \\ 
+## 50 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.02 \\ 
+## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.02 \\ 
 ## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 \\ 
 ## \\
 ## \\
@@ -497,8 +497,8 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.01 &amp;  0.02 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.03 \\ 
-## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 \\ 
+## 50 &amp;  &amp; -0.01 &amp;  0.02 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.02 \\ 
+## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.02 \\ 
 ## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 \\ 
 ## \\
 ## \\
@@ -523,7 +523,7 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 2 }{c}{ mean } &amp;  &amp; \multicolumn{ 2 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 4 &amp;  &amp; 1 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.03 \\ 
+## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.02 \\ 
 ## 500 &amp;  &amp;  0.00 &amp; -0.01 &amp;  &amp;  0.00 &amp; -0.01 \\ 
 ## \\
 ## \\
@@ -545,9 +545,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.0064 &amp;  0.0204 &amp;  0.0120 &amp;  &amp; -0.0013 &amp;  0.0242 &amp;  0.0266 \\ 
-## 250 &amp;  &amp; -0.0008 &amp; -0.0044 &amp;  0.0100 &amp;  &amp; -0.0015 &amp;  0.0034 &amp;  0.0144 \\ 
-## 500 &amp;  &amp; -0.0018 &amp; -0.0011 &amp; -0.0066 &amp;  &amp; -0.0022 &amp; -0.0021 &amp; -0.0105 \\ 
+## 50 &amp;  &amp; -0.0064 &amp;  0.0214 &amp;  0.0094 &amp;  &amp; -0.0017 &amp;  0.0247 &amp;  0.0179 \\ 
+## 250 &amp;  &amp; -0.0007 &amp; -0.0045 &amp;  0.0104 &amp;  &amp; -0.0010 &amp;  0.0020 &amp;  0.0181 \\ 
+## 500 &amp;  &amp; -0.0018 &amp; -0.0013 &amp; -0.0066 &amp;  &amp; -0.0028 &amp; -0.0022 &amp; -0.0127 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -567,9 +567,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.64 &amp;  2.04 &amp;  1.20 &amp;  &amp; -0.13 &amp;  2.42 &amp;  2.66 \\ 
-## 250 &amp;  &amp; -0.08 &amp; -0.44 &amp;  1.00 &amp;  &amp; -0.15 &amp;  0.34 &amp;  1.44 \\ 
-## 500 &amp;  &amp; -0.18 &amp; -0.11 &amp; -0.66 &amp;  &amp; -0.22 &amp; -0.21 &amp; -1.05 \\ 
+## 50 &amp;  &amp; -0.64 &amp;  2.14 &amp;  0.94 &amp;  &amp; -0.17 &amp;  2.47 &amp;  1.79 \\ 
+## 250 &amp;  &amp; -0.07 &amp; -0.45 &amp;  1.04 &amp;  &amp; -0.10 &amp;  0.20 &amp;  1.81 \\ 
+## 500 &amp;  &amp; -0.18 &amp; -0.13 &amp; -0.66 &amp;  &amp; -0.28 &amp; -0.22 &amp; -1.27 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -592,7 +592,7 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
 ## 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.71 \\ 
 ## 250 &amp;  &amp; 0.06 &amp; 0.12 &amp; 0.25 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.32 \\ 
-## 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.05 &amp; 0.11 &amp; 0.23 \\ 
+## 500 &amp;  &amp; 0.05 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.23 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -645,13 +645,13 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## &amp; list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## DGP &amp; n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 3 }{*}{ normal } &amp; 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.57 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.68 \\ 
-##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.25 &amp;  &amp; 0.08 &amp; 0.16 &amp; 0.30 \\ 
-##  &amp; 500 &amp;  &amp; 0.05 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.22 \\ 
+## \multirow{ 3 }{*}{ normal } &amp; 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.68 \\ 
+##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.25 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.31 \\ 
+##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.22 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 3 }{*}{ uniform } &amp; 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.58 &amp;  &amp; 0.24 &amp; 0.48 &amp; 0.99 \\ 
-##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.26 &amp;  &amp; 0.11 &amp; 0.21 &amp; 0.43 \\ 
-##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.29 \\ 
+## \multirow{ 3 }{*}{ uniform } &amp; 50 &amp;  &amp; 0.14 &amp; 0.28 &amp; 0.56 &amp;  &amp; 0.24 &amp; 0.47 &amp; 0.96 \\ 
+##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.12 &amp; 0.25 &amp;  &amp; 0.11 &amp; 0.21 &amp; 0.44 \\ 
+##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.17 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.30 \\ 
 ## \\
 ## \\
 ## \hline\hline
