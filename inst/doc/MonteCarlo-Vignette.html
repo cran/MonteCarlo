@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Christian Leschinski" />
 
-<meta name="date" content="2017-04-23" />
+<meta name="date" content="2018-03-14" />
 
 <title>Vignette: The MonteCarlo Package</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Vignette: The MonteCarlo Package</h1>
 <h4 class="author"><em>Christian Leschinski</em></h4>
-<h4 class="date"><em>2017-04-23</em></h4>
+<h4 class="date"><em>2018-03-14</em></h4>
 
 
 
@@ -97,16 +97,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <span class="co"># Define function that generates data and applies the method of interest</span>
 
-ttest&lt;-function(n,loc,scale){
+ttest&lt;-<span class="cf">function</span>(n,loc,scale){
   
   <span class="co"># generate sample:</span>
     sample&lt;-<span class="kw">rnorm</span>(n, loc, scale)
   
   <span class="co"># calculate test statistic:</span>
-    stat&lt;-<span class="kw">sqrt</span>(n)*<span class="kw">mean</span>(sample)/<span class="kw">sd</span>(sample)
+    stat&lt;-<span class="kw">sqrt</span>(n)<span class="op">*</span><span class="kw">mean</span>(sample)<span class="op">/</span><span class="kw">sd</span>(sample)
   
   <span class="co"># get test decision:</span>
-    decision&lt;-<span class="kw">abs</span>(stat)&gt;<span class="fl">1.96</span>
+    decision&lt;-<span class="kw">abs</span>(stat)<span class="op">&gt;</span><span class="fl">1.96</span>
   
   <span class="co"># return result:</span>
     <span class="kw">return</span>(<span class="kw">list</span>(<span class="st">&quot;decision&quot;</span>=decision))
@@ -152,7 +152,7 @@ ttest&lt;-function(n,loc,scale){
 ##     return(list(&quot;decision&quot;=decision))
 ## }
 ## 
-## Required time: 18.12 secs for nrep = 1000  repetitions on 1 CPUs 
+## Required time: 18.41 secs for nrep = 1000  repetitions on 1 CPUs 
 ## 
 ## Parameter grid: 
 ## 
@@ -176,10 +176,10 @@ ttest&lt;-function(n,loc,scale){
 ##  scale &amp;&amp; \multicolumn{ 6 }{c}{ 1 } &amp;  &amp; \multicolumn{ 6 }{c}{ 2 } \\ 
 ## n/loc &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; 0.05 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.10 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.94 \\ 
-## 100 &amp;  &amp; 0.05 &amp; 0.51 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.07 &amp; 0.16 &amp; 0.53 &amp; 0.84 &amp; 0.98 &amp; 1.00 \\ 
-## 250 &amp;  &amp; 0.05 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.35 &amp; 0.90 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-## 500 &amp;  &amp; 0.05 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.06 &amp; 0.58 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## 50 &amp;  &amp; 0.06 &amp; 0.28 &amp; 0.81 &amp; 0.99 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.12 &amp; 0.28 &amp; 0.56 &amp; 0.80 &amp; 0.94 \\ 
+## 100 &amp;  &amp; 0.04 &amp; 0.49 &amp; 0.97 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.06 &amp; 0.19 &amp; 0.53 &amp; 0.83 &amp; 0.98 &amp; 1.00 \\ 
+## 250 &amp;  &amp; 0.05 &amp; 0.88 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.36 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## 500 &amp;  &amp; 0.05 &amp; 0.99 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp;  &amp; 0.05 &amp; 0.59 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -198,15 +198,15 @@ ttest&lt;-function(n,loc,scale){
 ## \hline\hline\\\\
 ## scale &amp; n/loc &amp;  &amp; 0 &amp; 0.2 &amp; 0.4 &amp; 0.6 &amp; 0.8 &amp; 1 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 4 }{*}{ 1 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.30 &amp; 0.83 &amp; 0.98 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 100 &amp;  &amp; 0.05 &amp; 0.51 &amp; 0.98 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 500 &amp;  &amp; 0.05 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## \multirow{ 4 }{*}{ 1 } &amp; 50 &amp;  &amp; 0.06 &amp; 0.28 &amp; 0.81 &amp; 0.99 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 100 &amp;  &amp; 0.04 &amp; 0.49 &amp; 0.97 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.88 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 500 &amp;  &amp; 0.05 &amp; 0.99 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 4 }{*}{ 2 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.10 &amp; 0.28 &amp; 0.55 &amp; 0.79 &amp; 0.94 \\ 
-##  &amp; 100 &amp;  &amp; 0.07 &amp; 0.16 &amp; 0.53 &amp; 0.84 &amp; 0.98 &amp; 1.00 \\ 
-##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.35 &amp; 0.90 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
-##  &amp; 500 &amp;  &amp; 0.06 &amp; 0.58 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+## \multirow{ 4 }{*}{ 2 } &amp; 50 &amp;  &amp; 0.05 &amp; 0.12 &amp; 0.28 &amp; 0.56 &amp; 0.80 &amp; 0.94 \\ 
+##  &amp; 100 &amp;  &amp; 0.06 &amp; 0.19 &amp; 0.53 &amp; 0.83 &amp; 0.98 &amp; 1.00 \\ 
+##  &amp; 250 &amp;  &amp; 0.05 &amp; 0.36 &amp; 0.89 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
+##  &amp; 500 &amp;  &amp; 0.05 &amp; 0.59 &amp; 1.00 &amp; 1.00 &amp; 1.00 &amp; 1.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -280,11 +280,11 @@ ttest&lt;-function(n,loc,scale){
 </tbody>
 </table>
 <!-- | *debug*  | Boolean that activates/deactivates the debug mode. If *debug=TRUE*, all relevant variables are assigned to the global environment and the core loop is printed. This allows to run it manually and to see how MonteCarlo works internally. Default is *debug=FALSE*. |-->
-<p><em>raw</em> | Boolean that specifies whether the output should be averaged over the <em>nrep</em> repetitions. Default is <em>raw=TRUE</em>. |<br />
-<em>export_also</em> | A list specifying additional objects that are supposed to be exported to the cluster. This allows to export data or to bypass the automatic export of functions. Default is <em>export_also=NULL</em>. |</p>
+<div style="white-space: pre-line;"><em>raw</em> | Boolean that specifies whether the output should be averaged over the <em>nrep</em> repetitions. Default is <em>raw=TRUE</em>. |
+<em>export_also</em> | A list specifying additional objects that are supposed to be exported to the cluster. This allows to export data or to bypass the automatic export of functions. Default is <em>export_also=NULL</em>. |</div>
 <div id="ncpus---automatized-parallelization" class="section level4">
 <h4>ncpus - Automatized Parallelization</h4>
-<p>If <em>ncpus</em> is set to an integer value larger than one, the simulation is conducted parallized on a <em>snow</em> cluster with the respective number of slaves. Make sure that the machine you are using has the respective number of CPU units available. The parallelization builds on the snowfall package. The setup of the cluster including the export of the necessary functions and packages to the workers are handled automatically. <em>MonteCarlo()</em> autmatically analyzes <em>func</em> to determine the required functions and packages. It can even deal with nested dependencies, where <em>func</em> relies on functions that make use of other functions, and so on. The only precondition is that these functions are available in the workspace - as they have to be if one would just want to run <em>func</em> on its own.</p>
+<p>If <em>ncpus</em> is set to an integer value larger than one, the simulation is conducted parallized on a <em>snow</em> cluster with the respective number of slaves. Make sure that the machine you are using has the respective number of CPU units available. The parallelization builds on the snowfall package. The setup of the cluster including the export of the necessary functions and packages to the workers are handled automatically. If <em>func</em> uses objects in the global workspace, such as lookup tables or data sets, these are also exported. <em>MonteCarlo()</em> autmatically analyzes <em>func</em> to determine the required functions and packages. It can even deal with nested dependencies, where <em>func</em> relies on functions that make use of other functions, and so on. The only precondition is that these functions are available in the workspace - as they have to be if one would just want to run <em>func</em> on its own.</p>
 </div>
 <div id="max_grid---warning-for-excessively-large-parameter-grids" class="section level4">
 <h4>max_grid - Warning for Excessively Large Parameter Grids</h4>
@@ -388,7 +388,7 @@ This recipe is applied for all simulations conducted with *MonteCarlo()*. The fu
 </div>
 <div id="collapse---modify-the-way-the-simulation-results-are-aggregated" class="section level4">
 <h4>collapse - Modify the Way the Simulation Results are Aggregated</h4>
-<p>For a given parameter constellation, there will be <em>nrep</em> simulation results in <em>output</em>. By default these are aggregated using <em>mean()</em>. Therefore, if <em>func</em> returns a test decision with the result either specified as 0 (for non-rejection) or 1 (for rejection), as it was the case in the <em>ttest()</em>-example, the results will be aggregated to represent the rejection frequency (size or power - depending on the DGP and the parameter constellation). Similarly, if <em>func</em> returns a point estimate, the mean of the estimated parameter is given in the table. By returning the deviation of the estimated parameter from its true value in <em>func</em> the table will represent the bias. By the same principle, MSEs can be calculated if <em>func</em> returns squares of these values.</p>
+<p>For a given parameter constellation, there will be <em>nrep</em> simulation results in <em>output</em>. By default these are aggregated using <em>mean()</em>. Therefore, if <em>func</em> returns a test decision with the result either specified as 0 (for non-rejection) or 1 (for rejection), as it was the case in the <em>ttest()</em>-example, the results will be aggregated to represent the rejection frequency (size or power - depending on the DGP and the parameter constellation). Similarly, if <em>func</em> returns a point estimate, the mean of the estimated parameter is given in the table. If <em>func</em> returns the deviation of the estimated parameter from its true value, then the table will represent the bias. By the same principle, MSEs can be calculated if <em>func</em> returns squares of these values.</p>
 <p>Even though the standard behavior is very versatile, one might be interested in a different aspect of the simulated distribution - for example a quantile such as the median. Therefore the <em>collapse</em> argument allows to supply other functions that can be used to aggregate the output. An example could be median() or sd(). These functions are supplied to <em>collapse</em> in form of a list of the same length as the output of <em>func</em>. Note also that the functions that are specified have to return scalars.</p>
 <p>An example for the use of <em>collapse</em> is given below in the section “Further Examples”.</p>
 </div>
@@ -418,13 +418,40 @@ This recipe is applied for all simulations conducted with *MonteCarlo()*. The fu
 <p><em>MergeResults()</em> is a utility function that allows to merge the <em>MonteCarlo</em> objects generated from multiple simulations using the same <em>func</em> and <em>param_list</em>. This can be useful, if a first test simulation is run with a small <em>nrep</em> and more reliable results are produced later with a larger <em>nrep</em>, or if multiple machines are used.</p>
 <p>There are only two required arguments. The first one, <em>path</em> specifies the path of the directory that contains the files that are supposed to be merged. The second one, <em>identifier</em> is a string that identifies which files should be merged. The string has to be a substring of the variable names of all files that are supposed to be merged, but it cannot be contained in the filenames of other files in the specified directory.</p>
 </div>
+<div id="makeframe" class="section level2">
+<h2>MakeFrame()</h2>
+<p>It is often usefull to visualize the results of simulation studies with help of density plots, box plots and so on. To facilitate this, the MonteCarlo package does not provide its own suite of plotting functions. Instead, the function <em>MakeFrame()</em> converts the simulation results contained in the output of the <em>MonteCarlo()</em> function into a <em>data.frame</em> that is suitable to be manipulated and plotted with powerful standard tools such as <em>dplyr</em>, <em>ggplot2</em> and of course base graphics. The structure of the dataframe is such that each row contains the parameters used and the results of the simulation for one repetition. This is illustrated below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ttest&lt;-<span class="cf">function</span>(n,loc,scale){
+  
+  sample&lt;-<span class="kw">rnorm</span>(n, loc, scale)
+  stat&lt;-<span class="kw">sqrt</span>(n)<span class="op">*</span><span class="kw">mean</span>(sample)<span class="op">/</span><span class="kw">sd</span>(sample)
+  <span class="kw">return</span>(<span class="kw">list</span>(<span class="st">&quot;stat&quot;</span>=stat))
+}</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> MC_result&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</span>ttest, <span class="dt">nrep=</span><span class="dv">1000</span>, <span class="dt">param_list=</span>param_list)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">df&lt;-<span class="kw">MakeFrame</span>(MC_result)
+<span class="kw">head</span>(df)</code></pre></div>
+<pre><code>##     n loc scale        stat
+## 1 100 0.0     1  0.06306346
+## 2 250 0.0     1 -0.14677467
+## 3  50 0.0     1  1.24365601
+## 4 500 0.0     1 -0.69706901
+## 5 100 0.2     1  2.08853104
+## 6 250 0.2     1  0.67448822</code></pre>
+<p>If <em>func</em> returns a list with more than one element, then each of the list elements has its own column in the dataframe</p>
+<p>One can now use the dataframe to conduct further analyses. For example, we can plot estimated densities for the distribution of the t-test with different sample sizes <em>n</em>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(ggplot2)
+tbl &lt;-<span class="st"> </span><span class="kw">tbl_df</span>(df)
+<span class="kw">ggplot</span>(<span class="kw">filter</span>(tbl, loc<span class="op">==</span><span class="dv">0</span>, scale<span class="op">==</span><span class="dv">1</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>(<span class="kw">aes</span>(<span class="dt">x=</span>stat, <span class="dt">col=</span><span class="kw">factor</span>(n)))</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
 <div id="further-examples-comparison-of-two-estimators" class="section level2">
 <h2>Further Examples: Comparison of Two Estimators</h2>
 <p>In the previous sections we focused on the t-test as an example for the use of <em>MonteCarlo()</em> and <em>MakeTable()</em>. Here, we consider a second example: the evaluation of estimators. In particular, we compare the <em>mean()</em> and the <em>median()</em> as estimators for the expected value of a Gaussian random variable. This example serves to illustrate the use of the optinal arguments of the <em>MakeTable()</em> function.</p>
 <div id="multiple-outputs" class="section level3">
 <h3>Multiple Outputs</h3>
 <p>First, we specify the function of interest: <em>mean_vs_median()</em> (defined below) generates a sample of <em>n</em> normal distributed random variables with standard deviation <em>scale</em>. It then calulates the <em>mean()</em> and the <em>median()</em> and returns both in a list. Therefore, in contrast to the t-test example used above, this function returns a list with two elements.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_vs_median&lt;-function(n,scale){
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_vs_median&lt;-<span class="cf">function</span>(n,scale){
 
 <span class="co"># generate sample</span>
 sample&lt;-<span class="kw">rnorm</span>(n, <span class="dv">0</span>, scale)
@@ -453,9 +480,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## \hline\hline\\\\
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.01 &amp;  0.02 &amp;  0.01 \\ 
-## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 \\ 
-## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 \\ 
+## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp; -0.01 \\ 
+## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
+## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -473,9 +500,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## \hline\hline\\\\
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.02 \\ 
-## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.02 \\ 
-## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 \\ 
+## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp;  0.00 \\ 
+## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
+## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -497,9 +524,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.01 &amp;  0.02 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.02 &amp;  0.02 \\ 
-## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.02 \\ 
-## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 &amp;  &amp;  0.00 &amp;  0.00 &amp; -0.01 \\ 
+## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp; -0.01 &amp;  &amp; -0.01 &amp;  0.01 &amp;  0.00 \\ 
+## 250 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
+## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 &amp;  &amp;  0.00 &amp;  0.00 &amp;  0.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -523,8 +550,8 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 2 }{c}{ mean } &amp;  &amp; \multicolumn{ 2 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 4 &amp;  &amp; 1 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.01 &amp;  0.01 &amp;  &amp;  0.00 &amp;  0.02 \\ 
-## 500 &amp;  &amp;  0.00 &amp; -0.01 &amp;  &amp;  0.00 &amp; -0.01 \\ 
+## 50 &amp;  &amp; -0.01 &amp; -0.01 &amp;  &amp; -0.01 &amp;  0.00 \\ 
+## 500 &amp;  &amp;  0.00 &amp;  0.00 &amp;  &amp;  0.00 &amp;  0.00 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -545,9 +572,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.0064 &amp;  0.0214 &amp;  0.0094 &amp;  &amp; -0.0017 &amp;  0.0247 &amp;  0.0179 \\ 
-## 250 &amp;  &amp; -0.0007 &amp; -0.0045 &amp;  0.0104 &amp;  &amp; -0.0010 &amp;  0.0020 &amp;  0.0181 \\ 
-## 500 &amp;  &amp; -0.0018 &amp; -0.0013 &amp; -0.0066 &amp;  &amp; -0.0028 &amp; -0.0022 &amp; -0.0127 \\ 
+## 50 &amp;  &amp; -0.0051 &amp;  0.0071 &amp; -0.0052 &amp;  &amp; -0.0084 &amp;  0.0142 &amp; -0.0024 \\ 
+## 250 &amp;  &amp; -0.0034 &amp;  0.0012 &amp; -0.0022 &amp;  &amp; -0.0013 &amp;  0.0040 &amp; -0.0003 \\ 
+## 500 &amp;  &amp; -0.0004 &amp;  0.0032 &amp;  0.0044 &amp;  &amp; -0.0019 &amp;  0.0026 &amp;  0.0041 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -556,9 +583,7 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## \caption{ mean, median  }
 ## \end{table}</code></pre>
 <p>A simple way to make these differences visible without displaying to many digits is to change the unit, for example by multiplying all results with 100. This is where the <em>transform</em> argument of <em>MakeTable()</em> comes in handy.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">scale_table_100&lt;-function(x){x*<span class="dv">100</span>}
-
-<span class="kw">MakeTable</span>(<span class="dt">output=</span>erg_mean_median, <span class="dt">rows=</span><span class="kw">c</span>(<span class="st">&quot;n&quot;</span>), <span class="dt">cols=</span><span class="kw">c</span>(<span class="st">&quot;scale&quot;</span>,<span class="st">&quot;list&quot;</span>), <span class="dt">digits=</span><span class="dv">2</span>, <span class="dt">transform=</span><span class="kw">list</span>(scale_table_100, function(x){x*<span class="dv">100</span>}), <span class="dt">include_meta=</span><span class="ot">FALSE</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">MakeTable</span>(<span class="dt">output=</span>erg_mean_median, <span class="dt">rows=</span><span class="kw">c</span>(<span class="st">&quot;n&quot;</span>), <span class="dt">cols=</span><span class="kw">c</span>(<span class="st">&quot;scale&quot;</span>,<span class="st">&quot;list&quot;</span>), <span class="dt">digits=</span><span class="dv">2</span>, <span class="dt">transform=</span><span class="kw">list</span>(<span class="cf">function</span>(x){x<span class="op">*</span><span class="dv">100</span>}, <span class="cf">function</span>(x){x<span class="op">*</span><span class="dv">100</span>}), <span class="dt">include_meta=</span><span class="ot">FALSE</span>)</code></pre></div>
 <pre><code>## \begin{table}[h]
 ## \centering
 ## \resizebox{ 1 \textwidth}{!}{%
@@ -567,9 +592,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; -0.64 &amp;  2.14 &amp;  0.94 &amp;  &amp; -0.17 &amp;  2.47 &amp;  1.79 \\ 
-## 250 &amp;  &amp; -0.07 &amp; -0.45 &amp;  1.04 &amp;  &amp; -0.10 &amp;  0.20 &amp;  1.81 \\ 
-## 500 &amp;  &amp; -0.18 &amp; -0.13 &amp; -0.66 &amp;  &amp; -0.28 &amp; -0.22 &amp; -1.27 \\ 
+## 50 &amp;  &amp; -0.51 &amp;  0.71 &amp; -0.52 &amp;  &amp; -0.84 &amp;  1.42 &amp; -0.24 \\ 
+## 250 &amp;  &amp; -0.34 &amp;  0.12 &amp; -0.22 &amp;  &amp; -0.13 &amp;  0.40 &amp; -0.03 \\ 
+## 500 &amp;  &amp; -0.04 &amp;  0.32 &amp;  0.44 &amp;  &amp; -0.19 &amp;  0.26 &amp;  0.41 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -590,9 +615,9 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ##  list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.71 \\ 
-## 250 &amp;  &amp; 0.06 &amp; 0.12 &amp; 0.25 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.32 \\ 
-## 500 &amp;  &amp; 0.05 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.23 \\ 
+## 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.69 \\ 
+## 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.26 &amp;  &amp; 0.08 &amp; 0.16 &amp; 0.33 \\ 
+## 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.05 &amp; 0.11 &amp; 0.23 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -607,15 +632,15 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 <h2>Non-Nested Data Generating Processes</h2>
 <p>One of the key concepts behind the design of <em>MonteCarlo()</em> is that it is generally assumed that the samples are generated from a data generated process that nests all the situations of interest. This is also the case in the examples discussed so far, where the data is generated from a normal distribution and only the standard deviation of the distribution and the number of observations change.</p>
 <p>However, this does not mean that <em>MonteCarlo()</em> cannot handle non-nested data generating processes. As an example, we consider the case where we want to compare the standard deviation of the <em>mean()</em> and the <em>median()</em> as we did above, but for samples from a normal distribution and from a uniform distribution. These are clearly non-nested. To deal with this situation, we include <em>DGP</em> as an additional argument in <em>mean_vs_median()</em> and create a case distinction, so that the value of <em>DGP</em> determines from which distribution the sample is generated. We then include the possible values of <em>DGP</em> in an additional parameter grid.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_vs_median&lt;-function(n,scale,DGP){
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mean_vs_median&lt;-<span class="cf">function</span>(n,scale,DGP){
   
   <span class="co"># generate sample</span>
   
-  if(DGP==<span class="st">&quot;normal&quot;</span>){sample&lt;-<span class="kw">rnorm</span>(n, <span class="dv">0</span>, scale)}
+  <span class="cf">if</span>(DGP<span class="op">==</span><span class="st">&quot;normal&quot;</span>){sample&lt;-<span class="kw">rnorm</span>(n, <span class="dv">0</span>, scale)}
   
-  if(DGP==<span class="st">&quot;uniform&quot;</span>){
-    b&lt;-scale/(<span class="dv">2</span>*<span class="kw">sqrt</span>(<span class="dv">1</span>/<span class="dv">12</span>))
-    sample&lt;-<span class="kw">runif</span>(n, -b, b)
+  <span class="cf">if</span>(DGP<span class="op">==</span><span class="st">&quot;uniform&quot;</span>){
+    b&lt;-scale<span class="op">/</span>(<span class="dv">2</span><span class="op">*</span><span class="kw">sqrt</span>(<span class="dv">1</span><span class="op">/</span><span class="dv">12</span>))
+    sample&lt;-<span class="kw">runif</span>(n, <span class="op">-</span>b, b)
   }
   
   <span class="co"># calculate estimators</span>
@@ -645,13 +670,13 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
 ## &amp; list &amp;&amp; \multicolumn{ 3 }{c}{ mean } &amp;  &amp; \multicolumn{ 3 }{c}{ median } \\ 
 ## DGP &amp; n/scale &amp;  &amp; 1 &amp; 2 &amp; 4 &amp;  &amp; 1 &amp; 2 &amp; 4 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 3 }{*}{ normal } &amp; 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.35 &amp; 0.68 \\ 
-##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.25 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.31 \\ 
-##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.22 \\ 
+## \multirow{ 3 }{*}{ normal } &amp; 50 &amp;  &amp; 0.14 &amp; 0.29 &amp; 0.56 &amp;  &amp; 0.17 &amp; 0.36 &amp; 0.69 \\ 
+##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.13 &amp; 0.26 &amp;  &amp; 0.08 &amp; 0.16 &amp; 0.33 \\ 
+##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.18 &amp;  &amp; 0.06 &amp; 0.11 &amp; 0.23 \\ 
 ##  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  &amp;  \\ 
-## \multirow{ 3 }{*}{ uniform } &amp; 50 &amp;  &amp; 0.14 &amp; 0.28 &amp; 0.56 &amp;  &amp; 0.24 &amp; 0.47 &amp; 0.96 \\ 
-##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.12 &amp; 0.25 &amp;  &amp; 0.11 &amp; 0.21 &amp; 0.44 \\ 
-##  &amp; 500 &amp;  &amp; 0.04 &amp; 0.09 &amp; 0.17 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.30 \\ 
+## \multirow{ 3 }{*}{ uniform } &amp; 50 &amp;  &amp; 0.15 &amp; 0.29 &amp; 0.57 &amp;  &amp; 0.24 &amp; 0.48 &amp; 0.98 \\ 
+##  &amp; 250 &amp;  &amp; 0.06 &amp; 0.12 &amp; 0.24 &amp;  &amp; 0.11 &amp; 0.21 &amp; 0.42 \\ 
+##  &amp; 500 &amp;  &amp; 0.05 &amp; 0.09 &amp; 0.19 &amp;  &amp; 0.08 &amp; 0.15 &amp; 0.31 \\ 
 ## \\
 ## \\
 ## \hline\hline
@@ -670,7 +695,7 @@ erg_mean_median&lt;-<span class="kw">MonteCarlo</span>(<span class="dt">func=</s
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

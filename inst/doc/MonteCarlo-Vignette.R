@@ -64,6 +64,30 @@ ttest<-function(n,loc,scale){
 #  MC_result<-MonteCarlo(func=ttest, nrep=1000, param_list=param_list, [comment]: # debug=TRUE)
 
 ## ------------------------------------------------------------------------
+ttest<-function(n,loc,scale){
+  
+  sample<-rnorm(n, loc, scale)
+  stat<-sqrt(n)*mean(sample)/sd(sample)
+  return(list("stat"=stat))
+}
+
+## ----include=FALSE-------------------------------------------------------
+  MC_result<-MonteCarlo(func=ttest, nrep=1000, param_list=param_list)
+
+## ----eval=FALSE----------------------------------------------------------
+#   MC_result<-MonteCarlo(func=ttest, nrep=1000, param_list=param_list)
+
+## ------------------------------------------------------------------------
+df<-MakeFrame(MC_result)
+head(df)
+
+## ----message=FALSE, warning=FALSE----------------------------------------
+library(dplyr)
+library(ggplot2)
+tbl <- tbl_df(df)
+ggplot(filter(tbl, loc==0, scale==1)) + geom_density(aes(x=stat, col=factor(n)))
+
+## ------------------------------------------------------------------------
 
 mean_vs_median<-function(n,scale){
 
@@ -110,9 +134,7 @@ MakeTable(output=erg_mean_median, rows="n", cols=c("scale","list"), digits=2,
 MakeTable(output=erg_mean_median, rows=c("n"), cols=c("scale","list"), digits=4, include_meta=FALSE)
 
 ## ------------------------------------------------------------------------
-scale_table_100<-function(x){x*100}
-
-MakeTable(output=erg_mean_median, rows=c("n"), cols=c("scale","list"), digits=2, transform=list(scale_table_100, function(x){x*100}), include_meta=FALSE)
+MakeTable(output=erg_mean_median, rows=c("n"), cols=c("scale","list"), digits=2, transform=list(function(x){x*100}, function(x){x*100}), include_meta=FALSE)
 
 ## ------------------------------------------------------------------------
 MakeTable(output=erg_mean_median, rows="n", cols=c("scale", "list"), digits=2, collapse=list("sd", "sd"), include_meta=FALSE)
