@@ -1,8 +1,8 @@
 Package: MonteCarlo
 Type: Package
 Title: Automatic Parallelized Monte Carlo Simulations
-Version: 1.0.4
-Date: 2018-03-14
+Version: 1.0.5
+Date: 2018-03-16
 Author: Christian Hendrik Leschinski
 Maintainer: Christian Hendrik Leschinski <leschinski@statistik.uni-hannover.de>
 Description: Simplifies Monte Carlo simulation studies by automatically 
@@ -18,6 +18,6 @@ RoxygenNote: 5.0.1
 Suggests: knitr, rmarkdown, testthat, dplyr, ggplot2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2018-03-14 20:41:58 UTC; Christian
+Packaged: 2018-03-16 02:25:49 UTC; Christian
 Repository: CRAN
-Date/Publication: 2018-03-14 22:53:37 UTC
+Date/Publication: 2018-03-16 18:49:51 UTC

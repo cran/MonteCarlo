@@ -1,6 +1,6 @@
-1822e2379ae3418a5e700aa1580e2248 *DESCRIPTION
+e862c7cf5f143b1792bf4b4f5307edbb *DESCRIPTION
 4ed74a9483b295c418ddc75568af22a5 *NAMESPACE
-db759804e38518e9be57a49a2b2a129a *R/MakeDataFrame.R
+6a088ca7d6a4dc68e6353e575032dda9 *R/MakeDataFrame.R
 f6853a4ec2ea1c3514420c039370846e *R/MakeTable.R
 2ddcc5a5e3495b472da5024ad4ae2fd1 *R/MergeResults.R
 7dab34d0f9b2453e5d0430d023f8c901 *R/MonteCarlo.R
@@ -8,7 +8,7 @@ f6853a4ec2ea1c3514420c039370846e *R/MakeTable.R
 03ad3eafa9098d0ad4ce1bf5fcea79b0 *build/vignette.rds
 9396abfc096d4b97084829d5495a210f *inst/doc/MonteCarlo-Vignette.R
 5a3ba4847b8ccb2450fd67f9f2803e5e *inst/doc/MonteCarlo-Vignette.Rmd
-b3c3aede3768018ce15323d6d7fb4143 *inst/doc/MonteCarlo-Vignette.html
+60dce14879102964e7f8d74d8080464e *inst/doc/MonteCarlo-Vignette.html
 f3feb7b9a7691b0c2ce563713c99e269 *man/MC_inner.Rd
 a78b05c13d2d359fbd977d6f4ca08aa4 *man/MakeFrame.Rd
 7b4198dbbd3000bfe9971f475ae8b2f0 *man/MakeTable.Rd
